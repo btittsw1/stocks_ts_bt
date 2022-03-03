@@ -1,5 +1,5 @@
 library(fpp3)
-stocks <- read.csv("stocks/nyse_stocks.csv")
+stocks <- read.csv("nyse_stocks.csv")
 head(stocks)
 
 stocks$date <- as.Date(stocks$date)
