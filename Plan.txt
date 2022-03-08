@@ -1,0 +1,15 @@
+Braxton Tittsworth will maintain the repo used for this project. 
+
+Feature 1 will allow users to select a stock from a list to display in a time series plot. Once the first stock is selected, another menu will appear. 
+This new menu allows users to select another stock to display in a separate time series plot. Users will then be able to compare both stocks. 
+Cecil Walsh is responsible for this feature.
+
+Feature 2 will allow users to compare the closing price of a stock on one day and compare it to the volume of that stock the next day. 
+Griffin Goodheart is responsible for this feature.
+
+Feature 3 will allow users to filter a plot by sector. Users will then have the option of filtering by industry per each sector. 
+This allows users to analyze performance across sectors and industries within sectors. 
+Braxton Tittsworth is responsible for this feature.
+
+Feature 4 will allow users to filter a plot by location to compare the performance of stocks around the world. 
+Sunjay Hawkins is responsible for this feature.
