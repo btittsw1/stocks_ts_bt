@@ -13,13 +13,24 @@ ui <- dashboardPage(
     dashboardBody(
       fluidRow(
         #Feature 4
-        selectInput(inputId ="select", 
-                    label = h3("Select Location"), 
-                    choices = unique(stocks$state),
-                    ),
-        plotOutput("plotted_location"),
-        verbatimTextOutput("debug")
-      )
+        box(plotOutput("plotted_location"), width = 500),
+        # selectInput(inputId ="select", 
+        #             label = h3("Select Location"), 
+        #             choices = unique(stocks$state)
+        #             ),
+        selectInput(inputId = "selected_stock",
+                    label = "Select Stock",
+                    choices = unique(stocks$symbol)
+        ),
+        dateRangeInput(inputId = "select_date",
+                       label = "Select Date Range",
+                       min = min(stocks$date),
+                       max = max(stocks$date),
+                       start = min(stocks$date),
+                       end = max(stocks$date)
+        )
+      ),
+      
       
       
     )
