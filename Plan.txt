@@ -9,7 +9,7 @@ Griffin Goodheart is responsible for this feature.
 
 Feature 3 will allow users to filter a plot by sector. Users will then have the option of filtering by industry per each sector. 
 This allows users to analyze performance across sectors and industries within sectors. 
-Braxton Tittsworth is responsible for this feature.
-
-Feature 4 will allow users to filter a plot by location to compare the performance of stocks around the world. 
 Sunjay Hawkins is responsible for this feature.
+
+Feature 4 will allow users to filter a plot by stock symbol and date to analyze the volume of stocks by numerous factors. 
+Braxton Tittsworth is responsible for this feature.
