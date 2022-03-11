@@ -1,14 +1,23 @@
-#library
 library(shiny)
-
+library(ggplot2)
 server <- function(input, output) {
-    #Feature 4
-  output$debug <- renderPrint({
-    input$select
-  })  
-  output$plotted_location <- renderPlot({
-      autoplot(stocks[,c("date", input$select)])
-    output$value <- renderPrint({ input$select })
+  output$stock_dropdown <- renderUI({
+    filteredstocks <- stocks[stocks$state == input$select_state, ]
+    
+    selectInput(
+      inputId = "stock_selected",
+      label = "Select a stock:",
+      choices = sort(unique(filteredstocks$symbol))
+    )
+  })
+  
+  output$plotted_price <- renderPlot({
+    
+    
+    plot_df <- stocks[stocks$state == input$select_state & 
+                        stocks$symbol == input$stock_selected,]
+    
+    
+    autoplot(plot_df, .vars = close)
   })
 }
-  
