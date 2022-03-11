@@ -9,7 +9,7 @@ ui <- dashboardPage(
   dashboardSidebar(
     width = 150,
     sidebarMenu(
-      menuItem("Search by State", tabName = "state"),
+      menuItem("Search by Industry", tabName = "state"),
       menuItem("View by Date", tabName = "date"))
   ),
   dashboardBody(
@@ -19,9 +19,9 @@ ui <- dashboardPage(
                                              title = "Closing Price Year-Over-Year",
                                              solidHeader = TRUE),
             
-                                         box(selectInput(inputId ="select_state", 
-                                             label = ("Choose Location"), 
-                                             choices = unique(stocks$state)),
+                                         box(selectInput(inputId ="select_industry", 
+                                             label = ("Choose Industry"), 
+                                             choices = unique(stocks$gics_sector)),
                                              status = "primary", title = "Location"),
             
                                          box(uiOutput("stock_dropdown"),
