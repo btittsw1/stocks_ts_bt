@@ -1,5 +1,6 @@
 library(fpp3)
-
-stocks <- read.csv("nyse_stocks.csv")
+library(readr)
+#unzip data file; GitIgnore has been updated, so the data will work when unzipped
+stocks <- read_csv("nyse_stocks.csv.zip")
 stocks$date <- as.Date(stocks$date)
-stocks <- as_tsibble(stocks, index = date, key = symbol)
+stocks <- tsibble(stocks, index = date, key = symbol)
