@@ -16,12 +16,12 @@ ui <- dashboardPage(
     dashboardBody(
       fluidRow(
         #Feature 4
-        box(plotOutput("plotted_location"), width = 12, 
-            status = "primary", title = "Volume by Date Range", solidHeader = TRUE),
-        # box(selectInput(inputId ="select", 
-        #             label = h3("Select Location"), 
-        #             choices = unique(stocks$state)
-        #             ), status = "primary", title = "Location"),
+        box(plotOutput("plotted_stock1"), width = 12, 
+            status = "primary", title = "Stock 1", solidHeader = TRUE),
+         # box(selectInput(inputId ="selected_state",
+         #             label = h3("Select Location"),
+         #             choices = unique(stocks$state)
+         #             ), status = "primary", title = "Location"),
         box(selectInput(inputId = "selected_stock",
                     label = "Select Stock",
                     choices = unique(stocks$symbol)
@@ -33,8 +33,9 @@ ui <- dashboardPage(
                        start = min(stocks$date),
                        end = max(stocks$date)
         ),
-        status = "primary", title = "Time")
+        status = "primary", title = "Time"),
+        box(plotOutput("plotted_stock2"), width = 12,
+            status = "primary", title = "Stock 2", solidHeader = TRUE)
       )
     )
-)
-        
+   )
