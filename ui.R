@@ -13,11 +13,16 @@ ui <- dashboardPage(
       menuItem("Search by State", tabName = "Search", icon = icon("map"))
   ),
   dashboardBody(
-  fluidRow(
+  tabItem(tabName = "Search",
+    fluidRow(
+    #Feature 4
     box(plotOutput("plotted_price"), width = 12, 
         status = "primary", title = "Closing Price Year-Over-Year", solidHeader = TRUE),
     
-    box(selectInput(inputId ="select_state", 
+    box(plotOutput("plotted_volume"), width = 12, 
+        status = "primary", title = "Volume Year-Over-Year", solidHeader = TRUE),
+  
+     box(selectInput(inputId ="select_state", 
                     label = ("Choose Location"), 
                     choices = unique(stocks$state)
     ), status = "primary", title = "Location"),
@@ -27,5 +32,7 @@ ui <- dashboardPage(
     
     
     status = "primary", title = "Stock")
+    )
+   )
+  )
 )
-))

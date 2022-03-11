@@ -18,6 +18,16 @@ server <- function(input, output) {
     plot_df <- stocks[stocks$state == input$select_state & 
                         stocks$symbol == input$stock_selected,]
     
-  autoplot(plot_df, .vars = close)
+  autoplot(plot_df, .vars = close) 
+  
+  })
+  output$plotted_volume <- renderPlot({
+    
+    
+    plot_df <- stocks[stocks$state == input$select_state & 
+                        stocks$symbol == input$stock_selected,]
+    
+    autoplot(plot_df, .vars = volume) 
+    
   })
 }
