@@ -1,6 +1,7 @@
 library(shiny)
 library(ggplot2)
 server <- function(input, output) {
+
   output$stock_dropdown <- renderUI({
     filteredstocks <- stocks[stocks$state == input$select_state, ]
     

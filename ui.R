@@ -32,5 +32,7 @@ ui <- dashboardPage(
     
     
     status = "primary", title = "Stock")
-    ))))
-
+    )
+   )
+  )
+)
