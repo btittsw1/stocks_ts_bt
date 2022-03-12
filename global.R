@@ -1,6 +1,11 @@
 library(fpp3)
 library(readr)
-
+library(shiny)
+library(shinydashboard)
+library(ggplot2)
+library(dplyr)
+library(plotly)
+library(tidyquant)
 stocks <- read_csv("nyse_stocks.csv.zip")
 stocks$date <- as.Date(stocks$date)
 stocks <- tsibble(stocks, index = date, key = symbol)
