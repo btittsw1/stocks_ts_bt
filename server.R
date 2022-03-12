@@ -1,5 +1,3 @@
-library(shiny)
-library(ggplot2)
 server <- function(input, output) {
 #Feature 1
   output$stock_dropdown <- renderUI({
