@@ -11,7 +11,8 @@ ui <- dashboardPage(
     sidebarMenu(
       menuItem("Search by State", tabName = "state"),
       menuItem("View by Date", tabName = "date"),
-      menuItem("Search by Industry", tabName = "industry"))
+      menuItem("Search by Industry", tabName = "industry"),
+      menuItem("Stock Comparison", tabName = "stockcompare"))
   ),
   dashboardBody(
     tabItems(
@@ -55,9 +56,32 @@ ui <- dashboardPage(
             
                                       box(uiOutput("industry_dropdown"),
                                           status = "primary",
-                                          title = "Stock"))
+                                          title = "Stock")),
+    
+    tabItem(tabName = "stockcompare", box(plotOutput("plotted_comp1"), width = 6, 
+                                          status = "primary", 
+                                          title = "Closing Price Year-Over-Year", 
+                                          solidHeader = TRUE),
+            
+                                      box(plotOutput("plotted_comp2"), width = 6, 
+                                          status = "primary", 
+                                          title = "Closing Price Year-Over-Year", 
+                                          solidHeader = TRUE),
+            
+                                      box(selectInput(inputId ="select_stock1", 
+                                          label = ("Choose Stock"), 
+                                          choices = unique(stocks$symbol)), 
+                                          status = "primary", 
+                                          title = "First Stock Choice"),
+            
+                                      box(selectInput(inputId ="select_stock2", 
+                                          label = ("Choose Stock"), 
+                                          choices = unique(stocks$symbol)), 
+                                          status = "primary", 
+                                          title = "Second Stock Choice"),
+                                          
+            status = "primary", title = "Stock"))
     )
   )
-)
     
             

@@ -64,4 +64,14 @@ server <- function(input, output) {
     
     autoplot(plot_industry, .vars = open) 
 })
+#feature 4
+  output$plotted_comp1<-renderPlot({
+     plot_stock_1 <- stocks[stocks$symbol == input$select_stock1,]
+     autoplot(plot_stock_1, .vars = close) 
+  })
+  
+  output$plotted_comp2<-renderPlot({
+    plot_stock_2 <- stocks[stocks$symbol == input$select_stock2,]
+    autoplot(plot_stock_2, .vars = close) 
+  })
 }
