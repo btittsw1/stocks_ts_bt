@@ -3,7 +3,7 @@ library(ggplot2)
 server <- function(input, output) {
 #Feature 4
   output$stock_dropdown <- renderUI({
-    filteredstocks <- stocks[stocks$state == input$select_state, ]
+    filteredstocks <- stocks[stocks$gics_sector == input$select_industry, ]
     
     selectInput(
       inputId = "stock_selected",
@@ -20,7 +20,7 @@ server <- function(input, output) {
       stocks$date >= min_date &
         stocks$date <= max_date,]
     
-    plot_df <- stocks[stocks$state == input$select_state & 
+    plot_df <- stocks[stocks$gics_sector == input$select_industry & 
                         stocks$symbol == input$stock_selected,]
     
   autoplot(plot_df, .vars = close) 
@@ -34,7 +34,7 @@ server <- function(input, output) {
       stocks$date >= min_date &
         stocks$date <= max_date,]
     
-    plot_df <- stocks[stocks$state == input$select_state & 
+    plot_df <- stocks[stocks$gics_sector == input$select_industry & 
                         stocks$symbol == input$stock_selected,]
     
     autoplot(plot_df, .vars = volume) 
