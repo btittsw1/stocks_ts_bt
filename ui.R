@@ -1,6 +1,3 @@
-library(shiny)
-library(shinydashboard)
-
 
 ui <- dashboardPage(
   skin = "green",
